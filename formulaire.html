@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title>Formulaires</title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<link rel="stylesheet" type="text/css" href="../css/monstyle.css">
+	<!--intégrer un fichier css externe-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css">
+		input[type="range"] {position: relative;margin-left: 1em;}
+		input[type="range"]:after,
+		input[type="range"]:before{position: absolute;top: 1em;color: #aaa;}
+		input[type="range"]:before {left: 0em;content: attr(min);}
+		input[type="range"]:after{right: 0em;content: attr(max);}
+
+
+	</style>
+</head>
+<body>
+<!--Corps de la page : contient les éléments affichés-->
+	<h1>Les formulaires</h1>
+	<h2>A quoi sert un formulaire</h2>
+	<p>Un formulaire sert à entrer des informations et à les adresser à un serveur web</p>
+	<h3>1er formulaire</h3>
+	<form method="get" action="./traitement_formulaire.html" id="form1" name="form1"><!--Permet de dire comment on va envoyer les données , sois le get sois le post, 255 caractères max . Dans le méthode get on voit directement dans l'url , c'est pour cela qu'on s'en sert généralement. L'action permet de dire à qui on envoie les données. (#=> Page réentrante)-->
+		<fieldset>
+			<legend>Données personnelles</legend>
+			<!--Dans l'url on vois les name affichés et non les id -->
+
+			<label for="sexe">Homme</label>
+			<input type="radio" name="sexe" value="h" checked="">
+			<label for="sexe">Femme</label>
+			<input type="radio" name="sexe" value="f"><br>
+			<label for="nom">Nom:</label>
+			<input type="text" name="nom" id="nom" placeholder="Saisir nom" value="" maxlength="10" required size="20"><br>
+			<label for="prenom">Prénom:</label>
+			<input type="text" name="prenom" id="prenom" required placeholder="Saisir prénom">
+
+			<label for="email">Email</label>
+			<input type="email" name="email">
+
+			<label for="ddn">Date de naissance</label>
+			<input type="date" name="Date">
+			<label for="telephone">Numéro de téléphone</label>
+			<input type="telephone" name="tel">
+		</fieldset>
+		<fieldset>
+			<legend>diplomes</legend>
+			<label for="selDiplome">Diplomes</label>
+			<select type="text" value ="" name="diplome" size="3">
+				<option selected>Choisir diplome</option>
+				<option value="Bac STMG">Bac STMG</option>
+				<option value="Brevet">Brevet</option>
+				<option value="test1">test1</option>
+				<option value="test2">test2</option>
+			</select>
+		</fieldset>
+
+
+<!-- Selection multiples avec ctrl+clic-->
+		<fieldset>
+			<legend>diplomes</legend>
+			<label for="selDiplome">Ctrl+clic pour selectionner plusieurs diplomes</label>
+			<select type="text" value ="" name="diplome" size="3" multiple>
+				<option value="###" selected>Choisir diplome</option>
+				<option value="Bac STMG">Bac STMG</option>
+				<option value="Brevet">Brevet</option>
+				<option value="test1">test1</option>
+				<option value="test2">test2</option>
+			</select>
+		</fieldset>
+
+
+
+
+
+
+		<fieldset>
+			<legend>Compétences techniques</legend>
+			<label for="cbxPascal">Pascal:</label>	
+			<input type="checkbox" name="cbxPascal" id="cbxPascal">
+
+			<label for="cbxHTML">HTML:</label>	
+			<input type="checkbox" name="cbxHTML" id="cbxHTML">
+
+			<label for="cbxC">C:</label>	
+			<input type="checkbox" name="cbxC" id="C">
+
+		</fieldset>
+		<fieldset>
+			<legend>Motivations</legend>
+			<textarea placeholder="Motivations" rows="5" cols="25" maxlength="200">
+			</textarea>
+
+			<br/>
+			<label for="oui">Niveau en anglais</label>
+			<input type="range" name="oui" max="10" min="0" value="2" oninput="this.nextElementSibling.value = this.value">
+			<output> </output>
+
+			<br/>
+
+			<label for="Jeux">NbJeux</label>
+			
+			<input type="number" name="Jeux" step="5" max="25" min="0">	
+				
+			
+
+		</fieldset>
+
+		<label for="file">File progress:</label>
+		<progress id="file" max="100" value=""> 70% </progress>
+
+		<br/>
+
+
+		<label for="fuel">Fuel level:</label>
+		<meter id="fuel" name="fuel"
+       	min="0" max="5" step="1"
+       	value="0"/>
+       	<br/>
+
+	
+
+
+
+
+
+			<input type="button" name="test" value="test" onclick="alert('clic!');">
+			<input type="button" name="test2" value="test2" onclick="submit();">
+			<input type="submit" name="soumettre"value ="soumettre"/>
+			<input type="reset" name="raz" value="effacer"/>
+		
+	
+	</form>
+</body>
+</html>
