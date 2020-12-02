@@ -17,6 +17,11 @@ indique la version de HTML utilisée:HTML5-->
 	<!--Afficher une image dans l'onglet de sa page-->
 
 	<style type="text/css">
+
+		 @font-face {
+		 font-family: "Roboto-Light";
+ 		 src: url("css/police/Roboto-Light.ttf") format("truetype");
+				}
 		
 		div{
 			border: solid black;
@@ -26,36 +31,63 @@ indique la version de HTML utilisée:HTML5-->
 			text-align: center;
 		}
 
-		.premiere::first-letter{
+		/*.premiere::first-letter{
 			color: red;
-		}
+		}*/
 
 		/*span{
 			color: red;
 		}*/
-		p{
+
+		/*p{
 			margin-bottom: 0;
 			margin-top: 0;
+		}*/
+
+		span::first-letter{
+			color: red; 
+			text-transform: uppercase;
 		}
 
+		span{
+			display: block;
+		}
 
+		div::first-line{
+			font-weight: bold;
+
+		}
+		body {
+			font-family:'Roboto-Light';
+		}
+
+		#test{
+			border-top: none;
+			border-right: none;
+			border-left: none;
+			border-bottom: none;
+			margin-bottom: 10px;
+
+		}
 
 	</style>
 </head>
 <body>
 	<section>
-		<div>
-			<h3>EPITAPHE D'UN PARESSEUX</h3>
-			<p class="premiere">
-				<p class="premiere">Jean s'en alla comme il était venu ,</p>
-				<p class="premiere">Mangea le fonds avec le revenu,</p>
-				<p class="premiere">Tint les trésors chose peu nécessaire.</p>
-				<p class="premiere">Quand à son temps , bien le sut dispenser : </p>
-				<p class="premiere">Deux parts en fit , dont il soulait passer</p>
-				<p class="premiere">L'une à dormir et l'autre à ne rien faire.</p><br>
-			</p>
+			<div>	
+				<div id="test">
+					EPITAPHE D'UN PARESSEUX
+				</div>
+					<span>Jean s'en alla comme il était venu ,</span>
+					<span>Mangea le fonds avec le revenu,</span>
+					<span>Tint les trésors chose peu nécessaire.</span>
+					<span>Quand à son temps , bien le sut dispenser : </span>
+					<span>Deux parts en fit , dont il soulait passer</span>
+					<span>L'une à dormir et l'autre à ne rien faire.</span><br>
+			
 		
-		</div>
+			</div>
+	
 	</section>
 	
 <!--Corps de la page : contient les éléments affichés-->
