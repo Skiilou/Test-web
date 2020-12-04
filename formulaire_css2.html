@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<link rel="stylesheet" type="text/css" href="../css/monstyle.css">
+	<!--intégrer un fichier css externe-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css">
+		
+		input{
+			border-radius: 5px;
+		}
+
+
+		form{
+			width: 40%;
+		}
+
+		.requis{
+			border: solid 1px red;
+			color: lightgreen;
+			font-weight: bold;
+		}
+
+
+	</style>
+</head>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">			
+<form>
+	<fieldset>
+		<legend>Votre identité</legend>
+			<ol>
+				<li >Nom<input type="name" name="nom" placeholder="Prénom et nom" required class="requis" ></li>
+				<li>Email<input type="email" name="email" placeholder="exemple@domaine.com" required class="requis"></li>
+				<li>Téléphone<input type="tel" name="telephone" placeholder="par ex:+3375500000000" required class="requis"></li>
+			</ol>
+				
+	</fieldset>
+	<fieldset>
+		<legend>Adresse de livraison</legend>
+			<ol>
+				<li>Adresse<textarea></textarea></li>
+				<li>Code postal<input type="text" name="postal" required class="requis"></li>
+				<li>Pays<input type="text" name="pays" required class="requis"></li>
+			</ol>
+				
+	</fieldset>
+	<fieldset>
+		<legend>Informations CB</legend>
+			<ol>
+				<li>
+					<fieldset>
+						<legend>Type de carte bancaire</legend>
+						<ol>
+							<li><input type="radio" name="carte">VISA</li>
+							<li><input type="radio" name="carte">AmEx</li>
+							<li><input type="radio" name="carte">Mastercard</li>
+						</ol>
+					</fieldset>
+				</li>
+				<li>N° de carte<input type="text" name="n_carte" required class="requis"></li>
+				<li>Code sécurité<input type="text" name="secu" ></li>
+				<li>Nom du porteur<input type="text" name="porteur" placeholder="Même nom que sur la carte" required class="requis"></li>
+			</ol>
+				
+	</fieldset>
+	<fieldset>
+		<input type="submit" name="valider" value="J'achète!">
+	</fieldset>
+	
+
+
+
+</form>
+	
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>

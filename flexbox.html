@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<link rel="stylesheet" type="text/css" href="../css/monstyle.css">
+	<!--intégrer un fichier css externe-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css">
+		
+		body{
+			color: white;
+			background-color: black;
+		}
+		.container{
+			border: solid 1px white;
+			display: flex;
+			flex-direction: row;
+			width: 50%;
+			justify-content: space-between;
+			align-content: center;
+		}
+
+		.container>div1 {
+			border: solid 1px white;
+			order: 1;
+		}
+		.container>div2 {
+			border: solid 1px white;
+			order: 2;
+		}
+		.container>div3 {
+			border: solid 1px white;
+			order: 3;
+		}
+		.container>div4 {
+			border: solid 1px white;
+			order: 4;
+		}
+		.container>div5 {
+			border: solid 1px white;
+			order: 5;
+		}
+		.container>div6 {
+			border: solid 1px white;
+			order: 6;
+			flex-grow: 2;
+		}
+		.container>div7 {
+			border: solid 1px white;
+			order: 7;
+			flex-grow: 5;
+		}
+		.container>div8 {
+			border: solid 1px white;
+			order: 8;
+		}
+		.container>div9 {
+			border: solid 1px white;
+			order: 10;
+		}
+		.container>div10 {
+			border: solid 1px white;
+			order: 9;
+		}
+
+
+
+		.container2{
+			display:flex;
+			flex-flow: column;
+		}
+
+
+		.container3{
+			display: flex;
+			flex-wrap: wrap;
+			flex-flow: column; 
+		}
+
+		.poeme{
+			border: solid 1px yellow;
+			flex: none| [<'flex-grow'><'flex-shrink'>?||<'flex-basis'>];
+		}
+
+		.container2 span{
+			width: 50%;
+			border: solid 1px red;
+			flex-grow: 5;
+			flex-basis: |0;
+		}
+
+	</style>
+</head>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
+</header><hr/>
+<div class="container">
+	<div1>1</div1>
+	<div2>2</div2>
+	<div3>3</div3>
+	<div4>4</div4>
+	<div5>5</div5>
+	<div6>6</div6>
+	<div7>7</div7>
+	<div8>8</div8>
+	<div9>9</div9>
+	<div10>10</div10>
+</div>
+<div class="container2">
+	<div>oui</div>
+	<div class="item">oui</div>
+	<div>oui</div>
+	<div>oui</div>
+	<div>oui</div>
+	<div class="basis">
+		<span>short</span>
+		<span>loooooong</span>
+		<span>      short        </span>
+	</div>
+	<div>oui</div>
+	<div>oui</div>
+	<div>oui</div>
+	<div>oui</div>
+
+</div>
+<div class="container3">
+	<div>TEST</div>
+	<div class="item">TEST</div>
+	<div>TEST</div>
+	<div>TEST</div>
+	<div>
+		<span>short</span>
+		<span>loooooong</span>
+		<span>      short        </span>
+
+	</div>
+	<div>TEST</div>
+	<div>TEST</div>
+	<div>TEST</div>
+	<div>TEST</div>
+	<div class="poeme">Saepissime igitur mihi de amicitia cogitanti maxime illud considerandum videri solet, utrum propter imbecillitatem atque inopiam desiderata sit amicitia, ut dandis recipiendisque meritis quod quisque minus per se ipse posset, id acciperet ab alio vicissimque redderet, an esset hoc quidem proprium amicitiae, sed antiquior et pulchrior et magis a natura ipsa profecta alia causa. Amor enim, ex quo amicitia nominata est, princeps est ad benevolentiam coniungendam. Nam utilitates quidem etiam ab iis percipiuntur saepe qui simulatione amicitiae coluntur et observantur temporis causa, in amicitia autem nihil fictum est, nihil simulatum et, quidquid est, id est verum et voluntarium.</div>
+
+
+</div>
+
+	
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>

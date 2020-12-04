@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<link rel="stylesheet" type="text/css" href="../css/monstyle.css">
+	<!--intégrer un fichier css externe-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">
+	<!--Afficher une image dans l'onglet de sa page-->
+</head>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
+
+	<style type="text/css">
+		
+		table{
+			width: 100%;
+			border-spacing: 0;
+		}
+
+		td{
+			border-spacing: 0;
+		}
+
+		.adrss2{
+			width: 700px;
+			height: 70px;
+		}
+
+		textarea{
+			width: 100%;
+			height: 70px;
+		}
+
+		.pcolonne{
+			width: 15%;
+		}
+
+		.deuxcolonne{
+			width: 25%;
+		}
+		.quarante{
+			height: 40px;
+		}
+		#quatrevingt{
+			height: 80px;
+		}
+
+		legend{
+			font-weight: bold;
+			text-decoration: underline;
+			text-align: center;
+		}
+		#situselect{
+			text-align: center;
+		}
+		.tan{
+			background-color: tan;
+		}
+		.lightslategray{
+			background-color: lightslategray;
+		}
+		.rosybrown{
+			background-color: rosybrown;
+		}
+		.wheat{
+			background-color: wheat;
+		}
+		.grey{
+			background-color: lightgrey;
+			
+
+		}
+		.italique{
+			font-style: italic; 
+		}
+		#centre{
+			text-align: center;
+		}
+
+		body{
+			font-family: verdana 2;
+		}
+
+	</style>
+</header><hr/>
+<table>
+	<tr class="quarante" >
+		<td class="tan" class="pcolonne"><label for="nom">Nom</label></td>
+		<td class="tan" class="deuxcolonne"><input type="text" name="nom" id="nom" placeholder="Saisir nom" value="Labévue"></td>
+		<td class="lightslategray"   colspan="3"><legend>Adresse</legend></td>
+
+	</tr>
+	<tr class="quarante">
+		<td class="tan" class="pcolonne"><label for="prenom">Prénom</label></td>
+		<td class="tan"class="deuxcolonne"><input type="text" name="prenom" id="prenom" placeholder="Saisir prenom" value="Bertrand"></td>
+		<td class="lightslategray" rowspan="2">
+			<input type="text" name="adresse" placeholder="Saisissez votre adresse" value="3, rue Blagéti Paris" class="adrss2">
+		</td>
+
+	</tr>
+	<tr class="quarante">
+		<td class="tan" class="pcolonne"><label for="sexe">Sexe</label>	
+		<td class="tan" class="deuxcolonne">
+			<label for="sexe">Homme</label>
+			<input type="radio" name="sexe" checked="" value="0">
+			<label for="sexe">Femme</label>
+			<input type="radio" name="sexe" value="1"></td>
+		</td>
+
+	</tr>
+	<tr  class="quarante">
+		<td class="rosybrown" class="pcolonne" colspan="2" id="situation"><legend>Situation familiale</legend></td>
+		<td class="wheat" class="deuxcolonne" id="ddn" ><legend>Date de naissance</legend></td>
+
+	</tr>
+	<tr class="quarante">
+		<td class="rosybrown" class="pcolonne" colspan="2" id="situselect">
+			<select type="text" name="situat" size="3">
+				<option>Célibataire</option>
+				<option>Marié</option>
+				<option>Divorcé</option>
+			
+			</select>
+	</td>
+		<td class="wheat" class="deuxcolonne" id="centre">
+			<label class="italique">Jour</label>
+			<select>
+				<option>01</option>
+				<option>02</option>
+				<option>03</option>
+				<option>04</option>
+				<option>05</option>
+				<option>06</option>
+				<option>07</option>
+				<option>08</option>
+				<option>09</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+				<option>13</option>
+				<option>14</option>
+				<option>15</option>
+				<option>16</option>
+				<option>17</option>
+				<option>18</option>
+				<option>19</option>
+				<option>20</option>
+				<option>21</option>
+				<option>22</option>
+				<option>23</option>
+				<option>24</option>
+				<option>25</option>
+				<option>26</option>
+				<option>27</option>
+				<option>28</option>
+				<option>29</option>
+				<option>30</option>
+				<option>31</option>
+			</select>
+			<label class="italique">Mois</label>
+			<select>
+				<option>01</option>
+				<option>02</option>
+				<option>03</option>
+				<option>04</option>
+				<option>05</option>
+				<option>06</option>
+				<option>07</option>
+				<option>08</option>
+				<option>09</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+			</select>
+			<label class="italique">Année</label>
+			<select>
+				<option>1980</option>
+				<option>1981</option>
+				<option>1982</option>
+				<option>1983</option>
+				<option>1984</option>
+				<option>1985</option>
+				<option>1986</option>
+				<option>1987</option>
+				<option>1988</option>
+				<option>1989</option>
+				<option>1990</option>
+			</select>
+		</td>
+	<tr id="quatrevingt">
+
+		<td valign="bottom" align="right" colspan="3" class="grey" class="basdroite">
+			<input type="submit" name="valider" value="Valider">
+		</td>
+
+
+	</tr>
+
+</table>
+
+	
+<!--Corps de la page : contient les éléments affichés-->
+<hr>
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>

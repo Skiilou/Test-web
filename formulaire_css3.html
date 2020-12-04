@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une badivse mais une directive
+indique la version de HTML utidivsée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--badivses paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<divnk rel="stylesheet" type="text/css" href="../css/monstyle.css">
+	<!--intégrer un fichier css externe-->
+	<divnk rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">
+	<!--Afficher une image dans l'onglet de sa page-->
+</head>
+
+	<style type="text/css">
+
+		form{
+			background: #9cbc2c;
+  			-moz-border-radius: 5px;
+  			-webkit-border-radius: 5px;
+			border-radius: 5px;
+			padding: 20px;
+			width: 400px
+
+		}
+
+		caption{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		body{
+			font-family: comic sans ms;
+			background-color: black;
+		}
+		div{
+			background-color: #bcd06d;
+			border: solid 3px white;
+			margin: 3px;
+			border-radius: 5px;
+		}
+
+		.boutonvalider{
+			background: #1e2506;
+  			cursor: pointer;
+  			align-items: center;
+  			color: white;
+  			text-shadow: 0px 5px black;
+  			border-radius: 5px;
+  			font-size: 25px;
+  			margin-left: 135px;
+  			font-family: Brush Script MT;
+
+			}
+
+		
+
+
+
+
+
+
+	</style>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
+</header><hr/>
+<form>
+	<caption>Step 1:Votre identité</caption>
+	
+		
+			
+				<div >Nom<input type="name" name="nom" placeholder="Prénom et nom" required class="requis" ></div>
+				<div>Email<input type="email" name="email" placeholder="exemple@domaine.com" required class="requis"></div>
+				<div>Téléphone<input type="tel" name="telephone" placeholder="par ex:+3375500000000" required class="requis"></div>
+			
+				
+	
+	<caption>Step 2 : Adresse de livraison</caption>
+	
+				<div>Adresse<textarea></textarea></div>
+				<div>Code postal<input type="text" name="postal" required class="requis"></div>
+				<div>Pays<input type="text" name="pays" required class="requis"></div>
+				
+	</>
+	<caption>Step 3 :Informations CB</caption>
+	
+		
+				<div>
+					
+						<caption>Type de carte bancaire</caption><br>
+						
+							<span><input type="radio" name="carte"><img src="images/visa.jpg">VISA</span>
+							<span><input type="radio" name="carte"><img src="images/amex.png">AmEx</span>
+							<span><input type="radio" name="carte"><img src="images/mastercard.jpg"> Mastercard</span>
+						
+				</div>
+				<div>N° de carte<input type="text" name="n_carte" required class="requis"></div>
+				<div>Code sécurité<input type="text" name="secu" ></div>
+				<div>Nom du porteur<input type="text" name="porteur" placeholder="Même nom que sur la carte" required class="requis"></div>
+				
+	
+	
+		<input type="submit" name="valider" value="J'achète!" class="boutonvalider" >
+	
+	
+
+
+
+</form>
+
+	
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>
