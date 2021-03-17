@@ -302,6 +302,96 @@ console.log("ceci est la hauteur du canva1:",Canvas1.height);
 	ctx.fillStyle=gradient;
 	ctx.fillRect(20,20,250,230);
 </script>
+<p>Canvas bateau</p>
+<canvas id="Canvas9" width="350" height="350" style="border: solid 1px black;"></canvas>
+<script type="text/javascript">
+	var canvas8 = document.getElementById("Canvas9");
+	var ctx = canvas8.getContext("2d");
+
+		// Voile du bateau
+		ctx.beginPath();
+		ctx.strokeStyle="#add8e6";
+		ctx.lineWidth=1;
+		ctx.moveTo(150, 80);
+		ctx.lineTo(300, 230);
+		ctx.lineTo(150, 230);
+		ctx.lineTo(150, 80);
+		ctx.fillStyle = '#add8e6';
+    	ctx.fill();
+		ctx.stroke();
+
+		//Coque du bateau
+		ctx.beginPath();
+		ctx.strokeStyle="#882d17";
+		ctx.lineWidth=4;
+		ctx.moveTo(50,250);
+		ctx.lineTo(100,300);
+		ctx.lineTo(250,300);
+		ctx.lineTo(300,250);
+		ctx.fillStyle = '#cd853f';
+    	ctx.fill();
+		ctx.stroke();
+
+		//Mat du bateau
+
+		ctx.beginPath();
+		ctx.strokeStyle="#882d17";
+		ctx.lineWidth=10;
+		ctx.moveTo(140,50);
+		ctx.lineTo(140,250);
+		ctx.stroke();
+
+
+</script>
+
+<p>Canvas Anneaux</p>
+<canvas id="Canvas10" width="500" height="200" style="border: solid 1px black;"></canvas>
+
+<script type="text/javascript">
+	var canvas8 = document.getElementById("Canvas10");
+	var ctx = canvas8.getContext("2d");
+
+	//Dessiner cercle bleu
+	ctx.beginPath();
+	ctx.arc(60, 75, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#0000FF';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	//Dessiner cercle jaune
+	ctx.beginPath();
+	ctx.arc(117, 140, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#FFFF33';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	//Dessiner cercle noir
+	ctx.beginPath();
+	ctx.arc(175, 75, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	//Dessiner cercle vert
+	ctx.beginPath();
+	ctx.arc(232, 140, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#00FF00';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	//Dessiner cercle rouge
+	ctx.beginPath();
+	ctx.arc(290, 75, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#FF0000';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+
+
+
+
+
+</script>
 
 <!--Corps de la page : contient les éléments affichés-->
 <footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><

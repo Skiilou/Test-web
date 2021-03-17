@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<!--<link rel="stylesheet" type="text/css" href="../css/monstyle.css">-->
+	<!--intégrer un fichier css externe-->
+	<!--<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css">
+		.arrondi {
+			border-radius: 50%;
+		}
+		
+	</style>
+</head>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
+</header><hr/>
+<p>Canvas Anneaux</p>
+<canvas id="Canvas10" width="400" height="200" style="border: solid 1px black;"></canvas>
+
+<script type="text/javascript">
+	var canvas8 = document.getElementById("Canvas10");
+	var ctx = canvas8.getContext("2d");
+
+	//Dessiner cercle bleu
+	ctx.beginPath();
+	ctx.arc(60, 75, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#0000FF';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	//Dessiner cercle jaune
+	ctx.beginPath();
+	ctx.arc(117, 140, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#FFFF33';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	//Dessiner cercle noir
+	ctx.beginPath();
+	ctx.arc(175, 75, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	//Dessiner cercle vert
+	ctx.beginPath();
+	ctx.arc(232, 140, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#00FF00';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	//Dessiner cercle rouge
+	ctx.beginPath();
+	ctx.arc(290, 75, 50, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#FF0000';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+
+
+
+
+
+</script>
+
+
+
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>
