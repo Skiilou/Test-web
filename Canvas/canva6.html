@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<!--<link rel="stylesheet" type="text/css" href="../css/monstyle.css">-->
+	<!--intégrer un fichier css externe-->
+	<!--<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css">
+		.arrondi {
+			border-radius: 50%;
+		}
+		
+	</style>
+</head>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
+</header><hr/>
+<p>Canvas originel</p>
+<canvas id="Canvas1" name="Bonjour" class="arrondi" width="300" height="200" style="border:1px solid #000000;"></canvas>
+
+<!--Récupérer l'objet canvas par son ID-->
+<script type="text/javascript">
+	var canvas1 = document.getElementById("Canvas1");
+//Créer un objet de dessin sur le canvas
+var ctx = canvas1.getContext("2d");
+//créer une variable hauteur
+var hauteur=Canvas1.height;
+//Créer une variable largeur
+var largeur=Canvas1.width;
+
+//Dessiner : affecter un style à l'objet dessin : le style par défaut est noir
+ctx.fillStyle = "#FF0000";
+//On dessine un rectangle avec le fillstyle précédent sur le canvas
+ctx.fillRect(0, 0, 150, 100);
+
+
+ //Dessiner : affecter un style à l'objet dessin : le style par défaut est noir
+ctx.fillStyle = "#00FF00";
+//On dessine un rectangle avec le fillstyle précédent sur le canvas
+ctx.fillRect(150, 100, 150, 100);
+
+//afficher test dans la console
+console.log('test');
+//affiche le chemin
+console.log(document.location);
+console.log(document.location.href);
+//location.href est affiché dans la console suivi du chemin
+console.log('#location.href',location.href);
+//identifiant du canva
+console.log(Canvas1.id);
+//nom du canva
+console.log(Canvas1.getAttribute("name"));
+
+console.log('#nomducanvas',location.href);
+//afficher la largeur
+console.log("ceci est la largeur du canva1:",Canvas1.width);
+//afficher la hauteur
+console.log("ceci est la hauteur du canva1:",Canvas1.height);
+</script>
+
+
+<p>Canvas Mini</p>
+<canvas id="Canvas2"  style="border: solid 1px blue;" ></canvas>
+<script type="text/javascript">
+
+	var canvas2 = document.getElementById("Canvas2");
+	canvas2.width=largeur/2;
+	canvas2.height=hauteur/2;
+	//Définir les coordonnées (/2)
+	largeur/=2;
+	hauteur= hauteur/2;
+
+	//Créer un objet de dessin sur le canvas
+	var ctx = canvas2.getContext("2d");
+	//créer une variable hauteur
+	//var hauteur2=Canvas2.height;
+	//Créer une variable largeur
+	//var largeur2=Canvas2.width;
+
+	//Dessiner : affecter un style à l'objet dessin : le style par défaut est noir
+	ctx.fillStyle = "#FF0000";
+	
+	//On dessine un rectangle avec le fillstyle précédent sur le canvas
+	ctx.fillRect(0, 0, largeur/2, hauteur/2);
+
+
+	 //Dessiner : affecter un style à l'objet dessin : le style par défaut est noir
+	ctx.fillStyle = "#00FF00";
+	//On dessine un rectangle avec le fillstyle précédent sur le canvas
+	ctx.fillRect(largeur/2, hauteur/2, largeur, hauteur);
+
+/*
+	console.log(Canvas2.width=Canvas1.width/2);
+	console.log(Canvas2.height=Canvas1.height/2);
+
+	//Phrases permettant de dire quel est la hauteur
+	console.log("ceci est la hauteur du canva2:",Canvas2.height);
+	console.log("ceci est la largeur du canva2:",Canvas2.width);
+
+	console.log();
+*/
+</script>
+<p> Canvas nuances bleu</p>
+
+<canvas id="Canvas3" width="300" height="200" style="border: solid 1px black"></canvas>
+<script type="text/javascript">
+
+	var canvas3 = document.getElementById("Canvas3");
+	var ctx = canvas3.getContext("2d");
+	var h=canvas3.height;
+	var w=canvas3.width;
+	 //opacité
+	var o=1/8;
+	 //width
+	 w=w/4;
+	 //height
+	 h=h/2;
+	 const pas=0.125;
+	//1er carré
+	ctx.fillStyle = "RGBA(0,0,255,"+o+")";
+	ctx.fillRect(0, 0, w, h);
+	o=pas+o;
+	//2ème carré
+	ctx.fillStyle = "RGBA(0,0,255,"+o+")";
+	ctx.fillRect(w, 0, w, h);
+	o=pas+o;
+	//3ème carré
+	ctx.fillStyle = "RGBA(0,0,255,"+o+")";
+	ctx.fillRect(w*2, 0, w, h);
+	o=pas+o;
+	//4ème carré
+	ctx.fillStyle = "RGBA(0,0,255,"+o+")";
+	ctx.fillRect(w*3, 0, w, h);
+	o=pas+o;
+	//5ème carré
+	ctx.fillStyle = "RGBA(0,0,255,"+o+")";
+	ctx.fillRect(w*3, h, w, h);
+	o=pas+o;
+	//6ème carré
+	ctx.fillStyle = "RGBA(0,0,255,"+o+")";
+	ctx.fillRect(w*2, h, w, h);
+	o=pas+o;
+	//7ème carré
+	ctx.fillStyle = "RGBA(0,0,255,"+o+")";
+	ctx.fillRect(w, h, w, h);
+	o=pas+o;
+	//8ème carré
+	ctx.fillStyle = "RGBA(0,0,255,"+o+")";
+	ctx.fillRect(0, h, w, h);
+	o=pas+o;
+</script>	
+<p>Canvas random color</p>
+<canvas id="Canvas4" width="300" height="200" style="border: solid 1px black">
+	<script type="text/javascript">
+
+	function randomColor()
+	{
+     color='rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')';
+
+     return color;
+	}	
+
+	var h2=Canvas4.height;
+	var w2=Canvas4.width;
+	 //width
+	 w2=w2/4;
+	 //height
+	 h2=h2/2;
+	var canvas4 = document.getElementById("Canvas4");
+	var ctx = canvas4.getContext("2d");
+
+	//1er carré
+	ctx.fillStyle =randomColor();
+	ctx.fillRect(0, 0, w2, h2);
+	//2ème carré
+	ctx.fillStyle = randomColor();
+	ctx.fillRect(w2, 0, w2, h2);
+	//3ème carré
+	ctx.fillStyle = randomColor();
+	ctx.fillRect(w2*2, 0, w2, h2);
+	//4ème carré
+	ctx.fillStyle =randomColor() ;
+	ctx.fillRect(w2*3, 0, w2, h2);
+	//5ème carré
+	ctx.fillStyle =randomColor() ;
+	ctx.fillRect(w2*3, h2, w2, h2);
+	//6ème carré
+	ctx.fillStyle =randomColor() ;
+	ctx.fillRect(w2*2, h2, w2, h2);
+	//7ème carré
+	ctx.fillStyle =randomColor() ;
+	ctx.fillRect(w2, h2, w2, h2);
+	//8ème carré
+	ctx.fillStyle =randomColor();
+	ctx.fillRect(0, h2, w2, h2);
+	</script>
+</canvas>
+<p>Canvas Triangle</p>
+<canvas id="Canvas5" width="300" height="200" style="border: solid 1px black;">
+	<script type="text/javascript">
+		var canvas5 = document.getElementById("Canvas5");
+		var ctx = canvas5.getContext("2d");
+
+		ctx.strokeStyle="#FF0000";
+		ctx.lineWidth=4;
+		//Se positionner en 0,0 du canvas2
+		ctx.moveTo(0, 0);
+		//Coordonnées du dernier point de la droite
+		ctx.lineTo(300, 200);
+		//Dessiner la ligne droite
+		ctx.stroke();
+
+		ctx.beginPath();
+		//Se positionner en 0,0 du canvas2
+		ctx.moveTo(300, 0);
+		//Coordonnées du dernier point de la droite
+		ctx.lineTo(0, 200);
+		ctx.strokeStyle="#000000";
+		//Dessiner la ligne droite
+		ctx.stroke();
+		//Se positionner en 0,0 du canvas2
+		ctx.moveTo(150, 0);
+		//Coordonnées du dernier point de la droite
+		ctx.lineTo(150, 200);
+		//Dessiner la ligne droite
+		ctx.stroke();
+		
+		//Se positionner en 0,0 du canvas2
+		ctx.moveTo(0, 100);
+		//Coordonnées du dernier point de la droite
+		ctx.lineTo(300, 100);
+		//Dessiner la ligne droite
+		ctx.stroke();
+	</script>
+</canvas>
+<p>Canvas Cercles</p>
+<canvas id="Canvas6" width="300" height="250" style="border: solid 1px black;"></canvas>
+<script type="text/javascript">
+
+	var canvas6 = document.getElementById("Canvas6");
+	var ctx = canvas6.getContext("2d");
+	var h3=Canvas6.height;
+	var w3=Canvas6.width;
+
+
+	ctx.arc(w3/2, h3/2, 50, 0, 2 * Math.PI);
+	ctx.fillStyle = '#000050';
+    ctx.fill();
+    ctx.strokeStyle = '#FF0000';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(w3/2, h3/2, 75, 0, 2 * Math.PI);
+	ctx.strokeStyle = '#FFFF00';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(w3/2, h3/2, 100, 0, 2 * Math.PI);
+	ctx.strokeStyle = '#00FF00';
+    ctx.lineWidth=5;
+	ctx.stroke();
+</script>
+
+<p>Gradient linéaire</p>
+<canvas id="Canvas7" width="300" height="250" style="border: solid 1px black;"></canvas>
+<script type="text/javascript">
+	var canvas7 = document.getElementById("Canvas7");
+	var ctx = canvas7.getContext("2d");
+
+	var grd=ctx.createLinearGradient(0,0,200,0);
+	grd.addColorStop(0,"red");
+	grd.addColorStop(0.5,"green");
+	grd.addColorStop(1,"yellow");
+
+
+	ctx.fillStyle=grd;
+	ctx.fillRect(10,10,200,80);
+</script>
+<p>Gradient circulaire</p>
+<canvas id="Canvas8" width="300" height="250" style="border: solid 1px black;"></canvas>
+<script type="text/javascript">
+	var canvas8 = document.getElementById("Canvas8");
+	var ctx = canvas8.getContext("2d");
+	var gradient=ctx.createRadialGradient(120,170,30,100,200,80);
+
+	gradient.addColorStop(0,"red");
+	gradient.addColorStop(1,"blue");
+
+	ctx.fillStyle=gradient;
+	ctx.fillRect(20,20,250,230);
+</script>
+
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>

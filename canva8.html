@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<!--<link rel="stylesheet" type="text/css" href="../css/monstyle.css">-->
+	<!--intégrer un fichier css externe-->
+	<!--<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css">
+		.arrondi {
+			border-radius: 50%;
+		}
+		
+	</style>
+</head>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
+</header><hr/>
+
+<p>Gradient circulaire</p>
+<canvas id="Canvas8" width="300" height="250" style="border: solid 1px black;"></canvas>
+<script type="text/javascript">
+	var canvas8 = document.getElementById("Canvas8");
+	var ctx = canvas8.getContext("2d");
+	var gradient=ctx.createRadialGradient(120,170,30,100,200,80);
+
+	gradient.addColorStop(0,"red");
+	gradient.addColorStop(1,"blue");
+
+	ctx.fillStyle=gradient;
+	ctx.fillRect(20,20,250,230);
+</script>
+
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>

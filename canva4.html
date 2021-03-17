@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<!--<link rel="stylesheet" type="text/css" href="../css/monstyle.css">-->
+	<!--intégrer un fichier css externe-->
+	<!--<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css">
+		.arrondi {
+			border-radius: 50%;
+		}
+		
+	</style>
+</head>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
+</header><hr/>
+
+<p>Canvas random color</p>
+<canvas id="Canvas4" width="300" height="200" style="border: solid 1px black">
+	<script type="text/javascript">
+
+	function randomColor()
+	{
+     color='rgb('+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+','+Math.round(Math.random()*255)+')';
+
+     return color;
+	}	
+
+	var h2=Canvas4.height;
+	var w2=Canvas4.width;
+	 //width
+	 w2=w2/4;
+	 //height
+	 h2=h2/2;
+	var canvas4 = document.getElementById("Canvas4");
+	var ctx = canvas4.getContext("2d");
+
+	//1er carré
+	ctx.fillStyle =randomColor();
+	ctx.fillRect(0, 0, w2, h2);
+	//2ème carré
+	ctx.fillStyle = randomColor();
+	ctx.fillRect(w2, 0, w2, h2);
+	//3ème carré
+	ctx.fillStyle = randomColor();
+	ctx.fillRect(w2*2, 0, w2, h2);
+	//4ème carré
+	ctx.fillStyle =randomColor() ;
+	ctx.fillRect(w2*3, 0, w2, h2);
+	//5ème carré
+	ctx.fillStyle =randomColor() ;
+	ctx.fillRect(w2*3, h2, w2, h2);
+	//6ème carré
+	ctx.fillStyle =randomColor() ;
+	ctx.fillRect(w2*2, h2, w2, h2);
+	//7ème carré
+	ctx.fillStyle =randomColor() ;
+	ctx.fillRect(w2, h2, w2, h2);
+	//8ème carré
+	ctx.fillStyle =randomColor();
+	ctx.fillRect(0, h2, w2, h2);
+	</script>
+</canvas>
+
+
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>

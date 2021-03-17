@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<!--<link rel="stylesheet" type="text/css" href="../css/monstyle.css">-->
+	<!--intégrer un fichier css externe-->
+	<!--<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css">
+		.arrondi {
+			border-radius: 50%;
+		}
+		
+	</style>
+</head>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
+</header><hr/>
+
+<p>Canvas Cercles</p>
+<canvas id="Canvas6" width="300" height="250" style="border: solid 1px black;"></canvas>
+<script type="text/javascript">
+
+	var canvas6 = document.getElementById("Canvas6");
+	var ctx = canvas6.getContext("2d");
+	var h3=Canvas6.height;
+	var w3=Canvas6.width;
+
+
+	ctx.arc(w3/2, h3/2, 50, 0, 2 * Math.PI);
+	ctx.fillStyle = '#000050';
+    ctx.fill();
+    ctx.strokeStyle = '#FF0000';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(w3/2, h3/2, 75, 0, 2 * Math.PI);
+	ctx.strokeStyle = '#FFFF00';
+    ctx.lineWidth=5;
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(w3/2, h3/2, 100, 0, 2 * Math.PI);
+	ctx.strokeStyle = '#00FF00';
+    ctx.lineWidth=5;
+	ctx.stroke();
+</script>
+
+
+
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>
