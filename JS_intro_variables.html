@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<link rel="stylesheet" type="text/css" href="../css/monstyle.css">
+	<!--intégrer un fichier css externe-->
+	<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css"></style>
+</head>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
+</header><hr/>
+
+<script type="text/javascript">
+	
+	/*Ecrire une fonction testTypeVariable() qui se servira de typeof pour comprendre le principe de l'inférence (la variable 
+prend le type de la valeur qui lui est affectée) :
+
+console.log(typeof 42);
+// expected output: "number"
+
+console.log(typeof 'blubber');
+// expected output: "string"
+
+console.log(typeof true);
+// expected output: "boolean"
+
+console.log(typeof undeclaredVariable);
+// expected output: "undefined"
+
+*/
+let test;
+console.log("La variable test vaut : ",test);
+test='';
+console.log("La variable test vaut : ",test);
+
+
+/*Affectez à test des valeurs de types différents, et afficher.Insérer un saut de ligne dans une chaîne avec \n
+Insérer une tabulation dans une chaîne avec \t
+Insérer une apostrophe dans une chaîne avec \'   */
+var machaine = 'L\'école est finie !';
+var machaine = "L'école est finie !";
+
+console.log(typeof 'test');
+console.log(typeof 42);
+
+//Ne pas oublier que document.write vous permet d'écrire aussi le code HTML !!!!
+
+</script>
+
+
+<p>Global et local </p>
+
+<script type="text/javascript">
+	
+	//Reprendre les fonctions plus bas et les appeler afin de comprendre les notions abordées
+//Variable globale et locales
+maglobale = 55;
+var maglobale2 = 'Test variables globales';
+function afficherglobale(){
+console.log("ma variable globale vaut : ",maglobale);
+console.log("ma variable globale2 vaut : ",maglobale2);
+var malocale = 'Test variables locales déclarées dans la fonction avec mot clé var';
+console.log("ma variable locale vaut : ",malocale);
+maglobale3 = 'Test variables globale déclarée dans la fonction sans mot clé var ';
+console.log("ma variable locale/globale vaut : ",maglobale3); 
+//Tester avec let
+}
+</script>
+
+
+
+<button onclick="afficherglobale()"></button>
+
+<p>Fonction locale</p>
+
+<script type="text/javascript">
+	
+	//Variable locales
+function afficherlocale(){
+//console.log("ma variable locale vaut : ",malocale);
+console.log("ma variable globale vaut : ",maglobale3);
+//décommenter l'une ou l'autre avant appel
+}
+function maFonction() {
+				var maVariable = 42;
+							function sousFonction() {
+							console.log(maVariable);
+							document.write('<br>Accès à maVariable dans la sous fonction d\'où elle est déclarée : ', 
+							maVariable);
+							// => 42
+							}
+				console.log(maVariable);
+				document.write('<br>Accès à maVariable dans la fonction où déclarée : ',maVariable);
+				// => 42
+				sousFonction();
+				}
+</script>
+
+<button onclick="maFonction()"></button>
+
+<p>Fonction opérateur</p>
+<script type="text/javascript">
+	
+	function operateurs() {
+var numerateur = 42;
+var diviseur = 3;
+quotient = numerateur/diviseur;
+reste = numerateur%diviseur;
+console.log("Division de ",numerateur," et ", diviseur," avec opérateur /", quotient);
+console.log("Reste de ",numerateur," et ", diviseur," avec opérateur %", reste);
+console.log("Comparaison de ",numerateur," et ", diviseur," avec opérateur >=\n :",numerateur," plus grand que ", diviseur," ?", 
+numerateur >= diviseur);
+//Incrémentation
+numerateur++;
+console.log("numérateur incrémenté de 1 : ", numerateur);
+//Opérateurs logiques
+condition1=true;
+condition2=false;
+console.log("Opérateur logique ET entre ",condition1," ET ",condition2," : ",condition1&&condition2);
+console.log("Opérateur logique OU entre ",condition1," OU ",condition2," : ",condition1||condition2);
+//Opétrateur d'affectation : =
+//Opérateur de comparaison : ==
+//Opérateur de comparaison stricte : ===
+let num=23;
+//afficher le type de num
+let num2=23.0;
+//afficher le type de num2
+//afficher num==num2;
+//Afficher num===num2;
+//Conclusion ?
+}
+</script>
+
+<button onclick="operateurs()"></button>
+
+<p>Fonction avec paramètres</p>
+
+<script type="text/javascript">
+	
+	//Fonctions avec paramètres
+var monEntier;
+function carre(monEntier){
+						uneValeur = monEntier*monEntier;
+						return uneValeur;
+								}
+function afficherCarre(monEntier, uneValeur){
+							console.log("Le carré de ", monEntier, "est : \n", 
+							uneValeur);
+						}
+</script>
+
+<button onclick="afficherCarre(5)"></button>
+
+<p>Les structures de contrôle</p>
+
+<script type="text/javascript">
+	
+	//Les structures de contrôle:
+/*
+x = prompt ("votre age?","age");
+if ( x < 40) { 
+alert ('vous êtes jeune') ; 
+}
+else { 
+alert ('vous êtes vieux') ; 
+}
+*/
+//la ternaire est l'équivalent de l'alternative : if(....){}else{}
+//Le prompt sert à ouvrir une boite de dialogue dans laquelle l'utilisateur saist une valeur.
+//Regarder le type de la valeur retournée...
+function testTernaire(){
+x = prompt ("votre age?","age");
+age = (x < 40)? "jeune" : "vieux";
+alert ('vous êtes ' + age) ; 
+}
+function testTernaire2(){
+x = prompt ("votre age?","age");
+age = (x < 40)? "jeune" : (x < 60)? "Expérimenté": "vieux";
+alert ('vous êtes ' + age) ; 
+}
+// Reprendre testTernaire et testTernaire2 avec des if...else
+</script>
+
+<button onclick="testTernaire()"></button>
+
+<p>Boucles FOR</p>
+<script type="text/javascript">
+	//Boucles FOR
+function tableMultipication(){
+				x = prompt ("votre nombre?","Entier");
+				document.write("<h3>Table de multiplication</h3>");
+				for (i=1;i<=10;i++)
+				{
+					document.write(x+" * "+i+"="+x*i,"<BR/>");
+		}
+}
+function tablesMultipication(){
+		document.write("<h3>Ensemble des Tables de multiplication</h3>");
+		for (i=1;i<=10;i++){
+			document.write("<strong><em>Table des ", i," :</em></strong><BR/>");
+			for (j=1;j<=10;j++){
+				document.write("\t",i+" * "+ j +" = "+j*i,"<BR/>");
+}
+}
+}
+//Voir la boucle while
+</script>
+	
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>
