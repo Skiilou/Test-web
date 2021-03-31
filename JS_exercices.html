@@ -221,6 +221,83 @@ verifPalindrome(string); */
 	
 </script>
 
+
+<hr>
+<p>Auberge</p>
+
+<script type="text/javascript">
+	
+
+	/* Si 60 ans , ecus 0 
+		Si -10 ans , ecus 5
+		Sinon 30 ecus (10-59 et 60+)
+
+		ecus +10 si bagage de 20kg
+
+
+Age = int(input())
+poidBagages = int(input())
+ 
+prixBagages = 0
+prixChambre = 0
+ 
+if Age == 60:
+   prixChambre = 0
+   prixBagages = 0
+if Age < 10:
+   prixChambre = 5
+   prixBagages = 0
+   
+ 
+else :
+   prixChambre = 30
+   prixBagages = 0
+ 
+   if poidBagages >= 20:
+      prixBagages = 10 
+    
+   prixChambre = prixChambre + prixBagages
+print(prixChambre)
+
+	*/
+	function prix(){
+	age=(document.getElementById("age").value);
+	PoidsBagages=(document.getElementById("PoidsBagages").value);
+	//PrixBagages=(document.getElementById("PrixBagages").value);
+	ecus=(document.getElementById("ecus").value);
+	
+	if age==60 {
+		ecus=0
+		prixBagages=0
+	}
+	else if age < 10 {
+		ecus=5
+		PrixBagages=0
+	}
+
+	else {
+		ecus=30
+		PrixBagages=0
+	
+		if PoidsBagages>=20
+		{
+			prixBagages = 10
+		}
+	}
+
+	ecus= ecus+prixBagages;
+	return ecus;
+}
+
+</script>
+
+
+
+<label>Âge </label><input id="age">
+<label>Poids bagages </label><input id="PoidsBagages">
+<!--<label>Prix bagages</label><input id="prixBagages">-->
+<label>Prix total</label><input id="ecus" onclick="prix()">
+
 <!--Corps de la page : contient les éléments affichés-->
 <footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
 <a href="loicbaron@hotmail.fr">mail</a>
