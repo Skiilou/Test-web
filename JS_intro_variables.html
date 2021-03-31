@@ -206,7 +206,7 @@ function tableMultipication(){
 					document.write(x+" * "+i+"="+x*i,"<BR/>");
 		}
 }
-function tablesMultipication(){
+function tablesMultiplications(){
 		document.write("<h3>Ensemble des Tables de multiplication</h3>");
 		for (i=1;i<=10;i++){
 			document.write("<strong><em>Table des ", i," :</em></strong><BR/>");
@@ -217,7 +217,158 @@ function tablesMultipication(){
 }
 //Voir la boucle while
 </script>
+
+<button></button>
+
+<p>paires</p>
+<script type="text/javascript">
 	
+	//Ecrire une Boucle d'inversion (au lieu d'afficher les valeurs paires entre 0 et 100,
+//les afficher de 100 à O. Attention, la boucle fonctionne toujours par indice croissant)
+//Utilisation de break et continue
+//exercice :
+//Afficher les multiples de 3 et 9 compris entre 0 et 100
+//Ne pas afficher les multiples de 10
+//et afficher 100 en gras
+
+// Si x%2 = 0 il est pair , si x%2 =1 il est impair
+
+/* var cpt=100;
+
+while (cpt>=0 && cpt%2==0)
+console.log(cpt);
+cpt--; 
+
+function paires() {
+            var cpt = 100;
+            while (cpt >= 0) {
+                if (cpt % 2 == 0)
+                    console.log(cpt);
+                cpt = cpt - 1;
+            }
+        }
+
+
+*/
+
+function paires() {
+            var cpt = 100;
+            while (cpt >= 0) {
+                if (cpt % 2 == 0)
+                    console.log(cpt);
+                cpt = cpt - 1;
+            }
+        }
+</script>
+
+<button onclick="paires()"></button>
+
+<p>3 et 9</p>
+
+<script type="text/javascript">
+	
+
+	//!= Différent de 
+
+function trois(){
+	for (var i = 0; i < 100; i += 3) 
+	{
+
+		if (i%10=0) {continue;}
+    	if (i != 0){
+      console.log(i);
+    }
+  }
+}
+</script>
+
+
+<script type="text/javascript">
+	
+	function neuf(){
+	for (var i = 0; i < 100; i += 9) {
+    if (i != 0)
+      console.log(i);
+    }
+  }
+</script>
+
+
+<button onclick="trois()"></button>
+
+<button onclick="neuf()"></button>
+
+<p>Switch case</p>
+<script type="text/javascript">
+	
+
+	/*Switch....case
+switch(valeur) {
+case val1: instruction
+Break;
+case valX: instructionX
+Break;
+default: Instruction par défaut (en cas d’erreur de saisie par exemple, ou un cas non prévu)
+Exercice :
+Demander à l’utilisateur de saisir une note entre 0 et 20.
+Valider sa saisie avec boucle while (valeur entière entre 0 et 20)
+Puis en fonction de la note, afficher la mention
+Note <= 6 : Recalé
+Note <= 8 : Rattrapage
+Note <= 10 : Admis
+Note <= 12 : Passable
+Note <= 14 : Assez Bien
+Note <= 16 : Bien
+Note <=20 : Félicitations */
+
+function notesur20(note) {
+		 var remarque = "";
+		 console.log(note);
+
+		 x = prompt ("quel est votre note ?","note");
+                y = parseInt(x);
+                while((isNaN(y))&&((x>0)&&(x<20)))
+                {
+                    alert("ce n'est pas un nombre");
+                    x = prompt (" quel est votre note ?","note");
+                    y = parseInt(x);
+                }
+
+		  switch(true) {
+
+		 case (note<=6): remarque = "Recalé";
+		   break;
+		 case (note<=8) && (note>6): remarque = "Rattrapage";
+		   break;
+		 case (note<=10) && (note>8): remarque = "Admis";
+		   break;
+		 case (note<=12) && (note>10): remarque = "Passable";
+		   break;
+		 case (note<=14) && (note>12): remarque = "Assez Bien";
+		   break;
+		case (note<=16) && (note>14): remarque = "Passable";
+		   break;
+		case (note<=18) && (note>16): remarque = "Très Bien";
+		   break;
+		case (note<=20) && (note>18): remarque = "Félicitations";
+		   break;
+
+		default : console.log('Saisir un autre chiffre');
+
+		}
+		console.log(remarque);
+		
+}
+
+
+</script>
+
+
+
+<button onclick="notesur20()"></button>
+
+
+
 <!--Corps de la page : contient les éléments affichés-->
 <footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
 <a href="loicbaron@hotmail.fr">mail</a>
