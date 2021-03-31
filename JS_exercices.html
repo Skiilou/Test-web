@@ -16,21 +16,20 @@ indique la version de HTML utilisée:HTML5-->
 	<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">
 	<!--Afficher une image dans l'onglet de sa page-->
 	<style type="text/css"></style>
+	<script type="text/javascript" src="Javascript/mon_JS.js"></script>
 </head>
 <body>
 <header>Skiilou's company
 	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
 </header><hr/>
 
-
 <script type="text/javascript">
-
 	var nombre1,nombre2,nombre3,nombre4,nombre5,nombre6,nombre7,nombre8,nombre9,nombre10,nombre11,nombre12,somme,produit,moyenne,maximum;
 	
 function calculsomme(){
-
+//Fonction pour calculer la somme
 nombre1=Number(document.getElementById("nombre1").value);
-	nombre6bre2=Number(directiveocument.																			getElementById("nombre2").value);
+nombre2=Number(document.getElementById("nombre2").value);
 nombre3=Number(document.getElementById("nombre3").value);
 somme= nombre1+nombre2+nombre3;
 document.getElementById("somme").value=somme;
@@ -39,7 +38,7 @@ document.getElementById("somme").value=somme;
 
 
 function calculproduit(){
-
+// Fonction pour calculer le produit
 nombre4=Number(document.getElementById("nombre4").value);
 nombre5=Number(document.getElementById("nombre5").value);
 nombre6=Number(document.getElementById("nombre6").value);
@@ -49,7 +48,7 @@ document.getElementById("produit").value=produit;
 }
 
 function calculmoyenne(){
-	
+//Fonction pour calculer la moyenne
 nombre7=Number(document.getElementById("nombre7").value);
 nombre8=Number(document.getElementById("nombre8").value);
 nombre9=Number(document.getElementById("nombre9").value);
@@ -59,7 +58,7 @@ document.getElementById("moyenne").value=moyenne;
 }
 
 function max(){
-
+//Fonction pour calculer la valeur maximale
 nombre10=Number(document.getElementById("nombre10").value);
 nombre11=Number(document.getElementById("nombre11").value);
 nombre12=Number(document.getElementById("nombre12").value);
@@ -72,12 +71,11 @@ if (nombre12>maximum) {
 
 document.getElementById("maximum").value=maximum;
 }
-
-
 </script>
 
-<p>Calcul de la somme</p>
 
+<p>Calcul de la somme</p>
+<!-- Input pour la somme -->
 <input id="nombre1"> + <input id="nombre2"> + <input id="nombre3">
 <button onclick="calculsomme()">Calcul de la somme</button>
 = <input id="somme">
@@ -85,7 +83,7 @@ document.getElementById("maximum").value=maximum;
 <hr>
 
 <p>Calcul du produit</p>
-
+<!-- Input pour le produit -->
 <input id="nombre4"> / <input id="nombre5"> / <input id="nombre6">
 <button onclick="calculproduit()">Calcul du produit</button>
 = <input id="produit">
@@ -93,7 +91,7 @@ document.getElementById("maximum").value=maximum;
 <hr>
 
 <p>Calcul de la moyenne</p>
-
+<!-- Input pour la moyenne -->
 <input id="nombre7"> + <input id="nombre8"> + <input id="nombre9">
 <button onclick="calculmoyenne()">Calcul de la moyenne</button>
 = <input id="moyenne">
@@ -101,7 +99,7 @@ document.getElementById("maximum").value=maximum;
 <hr>
 
 <p>Maximum des 3 valeurs</p>
-
+<!-- Input pour la valeur maximale des 3 valeurs -->
 <input id="nombre10"> + <input id="nombre11"> + <input id="nombre12">
 <button onclick="max()">Valeur la plus haute</button>
 = <input id="maximum">
@@ -113,12 +111,13 @@ document.getElementById("maximum").value=maximum;
 
 
 <script type="text/javascript">
-	
-// ((prix ht * nb articles)= total HT
-//(total ht/100)*taux tva = tva
-//total ht + tva = ttc
+/*	
+ ((prix ht * nb articles)= total HT
+(total ht/100)*taux tva = tva
+total ht + tva = ttc */
 
 function taxe(){
+	//Fonction pour calculer la tva
 	prixht=Number(document.getElementById("prixht").value);
 	nbarticle=Number(document.getElementById("nbarticle").value);
 	tauxtva=Number(document.getElementById("tauxtva").value);
@@ -133,17 +132,21 @@ function taxe(){
 
 </script>
 
-
+<!-- Input pour le prix ht -->
 <label>Prix HT </label><input id="prixht"><br>
+<!-- Input pour le nb d'articles -->
 <label>Nombre d'articles </label><input id="nbarticle"><br>
 <p>Choississez un taux de TVA entre</p>
 <ul>
+	<!-- création d'une liste pour les différents taux -->
 	<li>Le taux normal de 20%</li>
 	<li>Le taux réduit de 10 %</li>
 	<li>Le taux réduit de 5,5 %</li>
 	<li>Le taux particulier de 2,1 %</li>
 </ul>
+<!-- Input pour le taux de TVA -->
 <label>Taux de TVA </label><input id="tauxtva"><br>
+<!-- Input pour le ttc -->
 <label>Prix TTC </label><input id="prixttc" value="" onclick="taxe()" placeholder="Cliquez ici pour calculer">
 
 
@@ -152,7 +155,7 @@ function taxe(){
 <p>Nom prenom</p>
 
 <script type="text/javascript">
-
+	//Fonction qui affiche les initiales
 	function affichinitiales(){
 	
 	nom=(document.getElementById("nom").value);
@@ -167,9 +170,11 @@ function taxe(){
 
 </script>
 
-
+<!-- Input pour le nom -->
 <label>Nom </label><input id="nom">
+<!-- Input pour le prénom -->
 <label>Prénom </label><input id="prenom">
+<!-- Input pour les initiales -->
 <label>Initiales </label><input id="initiales" onclick="affichinitiales()">
 
 
@@ -178,13 +183,7 @@ function taxe(){
 
 <script type="text/javascript">
 
-
-
-
-
-	
-
-// programme pour vérifier si le mot est un palindrome
+// programme pour vérifier si le mot est un palindrome , enlevez les /* */ pour activer le prompt
 
 /* function verifPalindrome(str) {
 
