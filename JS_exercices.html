@@ -11,12 +11,12 @@ indique la version de HTML utilisée:HTML5-->
 	<title></title>
 	<meta charset="utf-8">
 	<!--Encodage de la page (gestion des caractères accentués)-->
-	<link rel="stylesheet" type="text/css" href="../css/monstyle.css">
+	<!--<link rel="stylesheet" type="text/css" href="../css/monstyle.css">-->
 	<!--intégrer un fichier css externe-->
-	<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">
+	<!--<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">-->
 	<!--Afficher une image dans l'onglet de sa page-->
 	<style type="text/css"></style>
-	<script type="text/javascript" src="Javascript/mon_JS.js"></script>
+	<!--<script type="text/javascript" src="Javascript/mon_JS.js"></script>-->
 </head>
 <body>
 <header>Skiilou's company
@@ -215,12 +215,40 @@ verifPalindrome(string); */
 
 <script type="text/javascript">
 	
+	function MoyNbPo(){
+		//somme des nombres positifs
+		var somme=0;
+		//effectif des valeurs positifs
+		//la moyenne des nombres positifs = somme des nombres positifs/ effectif des valeurs positives
+		var div=0;
+		//4 nombres
+		i=4;
 
+		while (i>0) {
+			//conversion en entier
+			var nbr=parseInt(prompt('nbr'));
 
+			if(nbr>0) {
+				//reaffectation
+				somme+=parseInt(nbr);
+				//incrémentation du nombre de valeurs positives
+				div+=1;
+				console.log(somme,nbr);
+			}
+			i--;
+		}
+		//calcul de la moyenne
+		somme=somme/div;
+		console.log(somme);
+		document.getElementById("MoyNbPo").innerHTML = somme ;
+	}
 
 	
 </script>
-
+<label>Nombre1</label><input id="nb1">
+<label>Nombre2</label><input id="nb2">
+<label>Nombre3</label><input id="nb3">
+<label>Nombre4</label><input id="nb4">
 
 <hr>
 <p>Auberge</p>
@@ -234,69 +262,265 @@ verifPalindrome(string); */
 
 		ecus +10 si bagage de 20kg
 
-
-Age = int(input())
-poidBagages = int(input())
- 
-prixBagages = 0
-prixChambre = 0
- 
-if Age == 60:
-   prixChambre = 0
-   prixBagages = 0
-if Age < 10:
-   prixChambre = 5
-   prixBagages = 0
-   
- 
-else :
-   prixChambre = 30
-   prixBagages = 0
- 
-   if poidBagages >= 20:
-      prixBagages = 10 
-    
-   prixChambre = prixChambre + prixBagages
-print(prixChambre)
-
 	*/
-	function prix(){
-	age=(document.getElementById("age").value);
-	PoidsBagages=(document.getElementById("PoidsBagages").value);
-	//PrixBagages=(document.getElementById("PrixBagages").value);
-	ecus=(document.getElementById("ecus").value);
-	
-	if age==60 {
-		ecus=0
-		prixBagages=0
-	}
-	else if age < 10 {
-		ecus=5
-		PrixBagages=0
-	}
-
-	else {
-		ecus=30
-		PrixBagages=0
-	
-		if PoidsBagages>=20
-		{
-			prixBagages = 10
+	function calculPrix(){
+		var age=parseInt(document.getElementById("age").value);
+		var PoidsBagages=0;
+		console.log(PoidsBagages);
+		//PrixBagages=(document.getElementById("PrixBagages").value);
+		//prix de la chambre
+		var ecus=0;
+		var prixBagages=0;
+		
+		if (age==60) {
+			
 		}
-	}
+		else if (age < 10) {
+			ecus=5;
+		}
 
-	ecus= ecus+prixBagages;
-	return ecus;
-}
+		else {
+			ecus=30;
+			PoidsBagages=parseInt(document.getElementById("PoidsBagages").value);
+			if (PoidsBagages>=20)
+
+			{
+				prixBagages = 10;
+			}
+		}
+
+		ecus= ecus+prixBagages;
+		return ecus;
+	}
 
 </script>
 
 
 
-<label>Âge </label><input id="age">
-<label>Poids bagages </label><input id="PoidsBagages">
+<label for="age">Âge </label><input id="age" name="age">
+<label for="PoidsBagages">Poids bagages </label><input id="PoidsBagages" name="PoidsBagages">
 <!--<label>Prix bagages</label><input id="prixBagages">-->
-<label>Prix total</label><input id="ecus" onclick="prix()">
+<input type="button" value="Prix" id="ecus" onclick="alert(calculPrix());">
+
+
+<hr>
+<p>Boulangerie</p>
+
+<script type="text/javascript">
+	
+	function estOuverte(){
+		jour=document.getElementById("jour").value;
+		heure=document.getElementById("heure").value;
+//min pour choisir une heure minimum et max pour un maximum
+	if ((jour == 0) && (heure >= 7) && (heure <=13)) 
+    {
+        document.getElementById("ouverture").value=("la boulangerie est ouverte ");
+    }
+    if ((jour == 0) && (heure >= 16) && (heure <=20)) 
+    {
+        document.getElementById("ouverture").value=("la boulangerie est fermée");
+    }
+    if (jour == 1)
+    {
+        document.getElementById("ouverture").value=("la boulangerie est fermée ");
+    }
+    else if (((heure >= 7) && (heure <= 13)) || ((heure >= 16) && (heure <=20)))
+    {
+        document.getElementById("ouverture").value=("la boulangerie est ouverte");
+    }
+    else
+    {
+        document.getElementById("ouverture").value=("la boulangerie est fermée");
+    }
+
+}
+    
+</script>
+<!-- input jour ?
+de 0 à 6 , lundi au dimanche
+select puis option value=0
+tabJours=["Lundi", etc]
+indice i et tabJours[i]
+ -->
+<label>Saisir jour</label><input id="jour">
+<label>Saisir heure</label><input id="heure">
+<label></label><input id="ouverture">
+<button onclick="estOuverte"></button>
+
+<hr>
+<p>Catégorie foot</p>
+
+<script type="text/javascript">
+		
+	function categorieFoot(){
+
+		var categorie="";
+		var agekids=document.getElementById("agekids").value;
+		console.log(agekids);
+
+
+		switch(true) {
+
+		 case (agekids>=6) && (agekids<=7): categorie = "Poussin";
+		   break;
+		 case (agekids>=8) && (agekids<=9): categorie = "Pupille";
+		   break;
+		 case (agekids>=10) && (agekids<=8): categorie = "Minime";
+		   break;
+		 case (agekids>=12): categorie = "Cadet";
+		   break;
+		 
+
+		default : console.log('Saisir un autre chiffre');
+	}
+	console.log(categorie);
+	
+	/*function categorie(){
+   var age=prompt("Saisissez l'age de l'enfant");
+   if(age!="" && !isNaN(age)){
+   	 if(age >= 6 && age <= 7)
+	{
+		alert("L'enfant appartient  à la categorie 'Poussin' ");
+	}
+	else if(age >= 8 && age <= 9)
+	{
+		alert("L'enfant appartient  à la categorie  'Pupille'");
+	}
+	else if(age >= 10 && age <= 11)
+	{
+		alert("L'enfant appartient  à la categorie  'Minime'");
+	}
+	else if(age >= 12 && age <= 17)
+	{
+		alert("L'enfant appartient  à la categorie 'Cadet'");
+	}
+	else
+	{
+		alert("L'age saisie n'appartient à aucune categorie");
+	}
+   }
+   else{
+   	alert("Erreur:la valeur saisie est invalide");
+   }
+*/
+}
+
+</script>
+
+<label>Saisissez l'âge de l'enfant</label><input id="agekids">
+<!--<button onclick="categorieFoot()"></button>-->
+<button onclick="categorieFoot();">Foot</button>
+
+<hr>
+<p>Nom du mois</p>
+<script type="text/javascript">
+
+		var nomMois=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+		function numeroMois(nbMois) {
+
+                nbMois = parseInt(document.getElementById('nbMois').value);
+                document.getElementById("nameMois").innerHTML = nomMois[nbMois-1];
+
+            }
+	
+</script>
+
+<label>Saisir nombre du mois</label><input id="nbMois">
+<label>Le nom du mois est</label><input id="nameMois">
+<button onclick="numeroMois()"></button>
+
+
+<hr>
+<p>Saisie 1 à 5</p>
+<script type="text/javascript">
+
+	function nombreStyle(){
+		var x=number(document.getElementById("textStyle").value);
+		if ((x>=1 && x<5))
+		{
+			document.getElementById("textStyle").style=("border:solid 1px dargreen");
+			document.getElementById("textStyle").style=("border:solid 1px lightgreen");
+
+		}
+		else
+		{
+			document.getElementById("textStyle").style=("border:solid 1px red");
+
+		}
+	}
+
+</script>
+
+<button onclick="nombreStyle()"></button>
+
+<hr>
+<p>Juste prix </p>
+<script type="text/javascript">
+	// nb aléatoire entre 1 et 10
+	var nbcache=Math.round(Math.random()*10);
+	//nb d'essais =0
+	var essai=0;
+	// Put the object into storage
+	localStorage.setItem('nbcache', Math.round(Math.random()*10));
+	function rechercheNombre(){
+
+		//l'element saisi est transformé en entier
+		var motsaisi=parseInt(document.getElementById("motsaisi").value);
+		var message="";
+		//pour chaque essai on incrémente
+		essai=essai+1;
+		//si le nb est trop grand
+		if (motsaisi>nbcache){
+			message="C\' est trop grand";
+		
+		}
+		//si le nb est trop petit
+		else if (motsaisi<nbcache){
+			message="C\' est trop petit";
+		}
+		//Mot trouvé
+		else {
+			message="Trouvé! Vous avez mis "+essai+" coup(s)";
+		}
+		alert(message);
+
+	}
+
+function rechercheNombre2(){
+		// Retrieve the object from storage
+		var retrievedObject = localStorage.getItem('nbcache');
+		var motsaisi=parseInt(document.getElementById("motsaisi").value);
+		var message="";
+		//pour chaque essai on incrémente
+		essai=essai+1;
+		//si le nb est trop grand
+		if (motsaisi>retrievedObject){
+			message="C\' est trop grand";
+		
+		}
+		//si le nb est trop petit
+		else if (motsaisi<retrievedObject){
+			message="C\' est trop petit";
+		}
+		//Mot trouvé
+		else {
+			message="Trouvé! Vous avez mis "+essai+" coup(s)";
+		}
+		alert(message);
+
+	}
+
+</script>
+
+<input placeholder="Saisir nombre" type="number" id="motsaisi">
+<button onclick="rechercheNombre2();">Random</button>
+
+<hr>
+<p>Lendemain</p>
+<script type="text/javascript">
+	
+	
+</script>
 
 <!--Corps de la page : contient les éléments affichés-->
 <footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><

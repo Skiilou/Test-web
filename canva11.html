@@ -22,27 +22,87 @@ indique la version de HTML utilisée:HTML5-->
 	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
 </header><hr/>
 
-
-<canvas id="Canvas11" width="300" height="200" style="border: solid 1px black">
+<p>Rectangle rouge et bleu</p>
+<!--<canvas id="Canvas11" width="300" height="200" style="border: solid 1px black">
 	<script type="text/javascript">
 		
 		var canvas11 = document.getElementById("Canvas11");
 		var ctx = canvas11.getContext("2d");
 
+		//rouge
 		ctx.fillStyle = "#FF0000";
 		ctx.fillRect(0, 0, 300, 200);
+		//blanc
+		ctx.fillStyle="#FFFFFF";
+		ctx.fillRect(60,40,180,120);
+		//bleu
 		ctx.fillStyle = "#0000FF";
 		ctx.fillRect(75, 50, 150, 100);
+	</script>
+</canvas>
+-->
+<hr>
+<p>Polygone</p>
+<!--<canvas id="Canvas12" width="300" height="200" style="border: solid 1px black"></canvas>
+<script type="text/javascript">
+
+		var canvas12 = document.getElementById("Canvas12");
+		var ctx = canvas12.getContext("2d");
+
+
+		
+			ctx.beginPath();
+			//Couleur rouge de la bordure
+			ctx.strokeStyle='#FF0000';
+			ctx.lineWidth=5;
+			ctx.moveTo(100, 50);
+			ctx.lineTo(200, 50);
+			ctx.lineTo(250, 100);
+			ctx.lineTo(200, 150);
+			ctx.lineTo(100, 150);
+			ctx.lineTo(50, 100);
+			ctx.lineTo(100, 50);
+			//Couleur verte du polygone
+			ctx.fillStyle = '#00FF00';
+			
+			ctx.fill();
+			ctx.stroke();
 
 
 
 
 
-
+</script>
+-->
+<hr>
+<p>Figures</p>
+<canvas id="Canvas13" width="1000" height="500" style="border: solid 1px black">
+	<script type="text/javascript">
+			
+			var canvas13 = document.getElementById("Canvas13");
+			var ctx = canvas13.getContext("2d");
+			var R=20;
+			var r=100;
+			var O=2;
+             var x1 = R-O;
+             var y1 = 0;
+             var i  = 1;
+             ctx.beginPath();
+             ctx.moveTo(x1, y1);
+             do {
+                 if (i > 20000) break;
+                 var x2 = (R+r)*Math.cos(i*Math.PI/72) - (r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72))
+                 var y2 = (R+r)*Math.sin(i*Math.PI/72) - (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72))
+                 ctx.lineTo(x2, y2);
+                 x1 = x2;
+                 y1 = y2;
+                 i++;
+             } while (x2 != R-O && y2 != 0 );
+             ctx.stroke();
 
 	</script>
 </canvas>
-
+ 
 	
 <!--Corps de la page : contient les éléments affichés-->
 <footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a>
