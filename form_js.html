@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>formulaire</title>
+	<style type="text/css">
+        form{
+            background: #9cbc2c;
+              -moz-border-radius: 5px;
+              -webkit-border-radius: 5px;
+            border-radius: 5px;
+            padding: 20px;
+            width: 400px;
+			margin:auto;
+
+        }
+		input {
+			
+		
+		}
+        body{
+            font-family: comic sans ms;
+            background-color: black;
+        }
+        label {
+            background-color: #bcd06d;
+            border: solid 3px white;
+            margin: 3px;
+            border-radius: 5px;
+        }
+        .boutonvalider{
+            background: #1e2506;
+              cursor: pointer;
+              align-items: center;
+              color: white;
+              text-shadow: 0px 5px black;
+              border-radius: 5px;
+              font-size: 25px;
+              margin-left: 135px;
+              font-family: Brush Script MT;
+
+        }
+    </style>
+</head>
+<body>
+	<form method="GET" action="" id="form1">
+		<caption>Step 1: Votre identité</caption><br>
+            
+			<label for="nom">Nom</label>
+            <input id="Nom" type="text" name="nom" placeholder="nom" class="requis" ><br>
+			<label for="prenom">Prenom</label>
+			<input id="Prenom" type="text" name="prenom" placeholder="Prénom" class="requis" ><br>
+			<label for="email">Adresse Email</label>
+			<input id="email" type="email" name="email" placeholder="exemple@domaine.com" class="requis"><br>
+			<label for="telephone">N° de téléphone</label>
+            <input id="Telephone" type="tel" name="telephone" placeholder="par ex:+3375500000000" class="requis"><br>			
+			<label for="naissanceJ">Jour</label>
+			
+			<script>
+//Just for the lazy ones here I also provide a customized version of the function for the format yyyy-mm-dd.			
+			function isValidDate(dateString)
+				{
+		// First check for the pattern
+					var regex_date = /^\d{4}\-\d{1,2}\-\d{1,2}$/;
+
+					if(!regex_date.test(dateString))
+					{
+						return false;
+					}
+
+    // Parse the date parts to integers
+    var parts   = dateString.split("-");
+    var day     = parseInt(parts[2], 10);
+    var month   = parseInt(parts[1], 10);
+    var year    = parseInt(parts[0], 10);
+
+    // Check the ranges of month and year
+    if(year < 1000 || year > 3000 || month == 0 || month > 12)
+    {
+        return false;
+    }
+
+    var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+    // Adjust for leap years
+    if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+    {
+        monthLength[1] = 29;
+    }
+    // Check the range of the day
+    return day > 0 && day <= monthLength[month - 1];
+				}
+
+				var TabMois = ["Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre"];
+				var i = 0;
+				document.write("<select id='naissanceJ' name='naissanceJ' class='requis'>");
+					document.write("<OPTION value='99'>saisir jours</OPTION>");
+					for(i=1;i<=31;i++){
+					
+						document.write("<OPTION value='"+i+"'>"+i+"</OPTION>");
+					
+					}
+				document.write("</select>");
+				
+				document.write("<label for='naissanceM'>Mois</label>");
+				document.write("<select id='naissanceM' class='requis'>");
+					document.write("<OPTION value='99'>saisir mois</OPTION>");
+					for(i=0;i<TabMois.length;i++) {
+				
+						document.write("<OPTION value='"+i+"'>"+TabMois[i]+"</OPTION>");
+					
+					}
+					document.write("</select>");
+					
+				document.write("<label for='naissanceA'>Année</label>");
+				var maDate = new Date();
+				console.log(maDate.getFullYear());
+				maDate = maDate.getFullYear();
+				document.write("<select id='naissanceA' name='naissanceA' class='requis'>");
+					document.write("<OPTION value='99'>saisir annee</OPTION>");
+					for(i=maDate;i>=maDate-60;i--){
+					
+						document.write("<OPTION value='"+i+"'>"+i+"</OPTION>");
+					
+					}
+				document.write("</select>");
+				
+				
+				function verifForm() {
+				
+					var msg ="";
+					var valNom = document.getElementById("Nom").value;
+					var valPrenom = document.getElementById("Prenom").value;
+					var valemail = document.getElementById("email").value;
+					var valtelephone = document.getElementById("Telephone").value;
+					/*var valnaissanceJ = document.getElementById("naissanceJ").text;
+					var valnaissanceM = document.getElementById("naissanceM").text;
+					var valnaissanceA = document.getElementById("naissanceA").text;*/
+					
+					var selectElmt = document.getElementById("naissanceA");
+					var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
+					var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
+					var strDate = textselectionne +'-';
+					var selectElmt = document.getElementById("naissanceM");
+					var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
+					var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
+					strDate += valeurselectionnee +'-';
+					var selectElmt = document.getElementById("naissanceJ");
+					var valeurselectionnee = selectElmt.options[selectElmt.selectedIndex].value;
+					var textselectionne = selectElmt.options[selectElmt.selectedIndex].text;
+					strDate += textselectionne;
+					//alert(valNom);
+					//console.log(valNom=="");
+					if (valNom==""){
+						msg += "merci de renseigner un nom";
+						alert(msg);
+						return false;
+					}
+					//if (valPrenom=="")
+					//if (valemail=="")
+					//if (valtelephone=="")
+					//if (valnaissanceJ=="") {}
+					
+					alert(strDate);
+					console.log(isValidDate(strDate));
+					//if (valNom=="")
+					//if (valNom=="")
+					/*}else{
+					
+						document.getElementById("form1").action = "traitement_formulaire.html";
+						return true;
+					
+					}*/
+				}
+				
+				
+			</script>
+		<br>
+		<caption>Step 2 : Adresse de livraison</caption>
+    
+            <label for="TextAdresse">Adresse<textarea id="TextAdresse"></textarea></label>
+            <label for="postal">Code postal<input type="text" name="postal" class="requis"></label>
+            <div>Pays<input type="text" name="pays" class="requis"></div>
+		<br>
+		<caption>Step 3 : Informations CB</caption>
+
+            <label for="carte">  
+                <caption>Type de carte bancaire</caption><br>
+                     
+				<span><input type="radio" name="carte"><img href="https://cdn.visa.com/cdn/assets/images/logos/visa/logo.png">VISA</span>
+                <span><input type="radio" name="carte"><img href="https://www.aexp-static.com/cdaas/one/statics/axp-static-assets/1.8.0/package/dist/img/logos/dls-logo-bluebox-solid.svg">AmEx</span>
+                <span><input type="radio" name="carte"><img href="https://www.mastercard.fr/content/dam/public/mastercardcom/eu/fr/images/Logo/mc-logo-52.svg"> Mastercard</span>
+                        
+            </label>
+            <label for="NCarte">N° de carte<input id="NCarte" type="text" name="n_carte" class="requis"></Label>
+            <label for="CodeSecu">Code sécurité<input id="CodeSecu"type="text" name="secu" ></label>
+            <label for="NomDuPorteur">Nom du porteur<input id="NomDuPorteur" type="text" name="porteur" placeholder="Même nom que sur la carte" class="requis"></label>
+		<caption>Step 4 : Mots de passe</caption>
+		
+			<label for="Mdp">Mot de passe<input id="Mdp" type="name" name="MDP" placeholder="Mot de passe" class="requis"></input></label>
+			<label for="ConfirmationMDP">Confirmer<input id="ConfirmationMDP" type="name" name="MDPconfirm" placeholder="Confirmation Mot de passe" class="requis"></input></label>
+        <input type="button" name="valider" value="Envoyer" class="boutonvalider" onclick="verifForm()" >
+	</form>
+</body>
+</html>

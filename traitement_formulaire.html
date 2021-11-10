@@ -1,14 +1,81 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!-- ceci n'est pas une balise mais une directive
+    Indique la version de HTML utilisée : HTML5
+-->
+<!-- ceci est un commentaire-->
 <html>
-<head>
-	<title>Traitement formulaire</title>
+<head> <!-- en-tête de la page-->
+    <title></title>
+    <!--encodage de la page-->
+    <meta charset="utf-8"> 
+    <!--intégrer un fichier CSS externe-->
+    <!--<link rel="stylesheet" type="text/css" href="..css/monstyle.css">-->
+    <!--Afficher une image dans l'onglet de sa page-->
+    <style type="text/css">
+         body
+        {
+            font-family: comic sans ms;
+            background-color: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-		<header>Skiilou's company
-		<img src="images/5petit.jpg" width="145" height="145" alt="plan">
-	</header><hr/>
-<hr/>
-<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
-<a href="loicbaron@hotmail.fr">mail</a>
+<!-- corps de la page -->
+    <header>
+    </header>
+    <hr>
+
+    <main>
+        <script type="text/javascript">
+            var recupvale = [];
+            var modifligne = [];
+            var test;
+            var nom = [];
+            var i=0;
+            var j=0;
+            var maDate = new Date();
+            maDate = maDate.getFullYear();
+
+            //recuperer les information comprise dans l'url
+            recupvale = document.location.search;
+            // utilisation de split pour pouvoir enlever se dont nous avons pas besoin
+            recupvale = recupvale.split('&');
+            /*recupvale[5] = recupvale[5].split('=');*/
+            recupvale[8] = recupvale[8].replace('+'," ");
+            recupvale[13] =    recupvale[13].replace('+'," ");
+
+
+            recupvale[0] = recupvale[0].replace("?","");
+            console.log(recupvale);
+            console.log(maDate);
+            maDate = maDate - recupvale[5["1"]];
+            console.log(recupvale[5]["1"]);
+            console.log(maDate);
+            for(i=0;i<recupvale.length;i++)
+            {
+                for(j=0;j<modifligne.length;j++)
+                {
+                    modifligne = recupvale[i];
+                    if (modifligne[i]== '+') 
+                    {
+
+                    }
+                }
+                document.write(recupvale[i]);
+                document.write("<br>");
+            }
+            /*document.write(recupvale[0]);
+            console.log(test);
+            console.log(recupvale[0]);
+            console.log(nom);*/
+        </script>
+    </main>
+
+    <a href="formulaire_final_js.html"> retourner sur le formulaire</a>
+
+    <hr>
+    <footer>
+    </footer>
+
 </body>
 </html>

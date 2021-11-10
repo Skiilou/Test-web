@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<!--<link rel="stylesheet" type="text/css" href="../css/monstyle.css">-->
+	<!--intégrer un fichier css externe-->
+	<!--<link rel="shortcut icon" type="image/c-icon" href="../images/monImage.jpg">-->
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css">
+
+		div{
+        	border : 1px solid black;
+            width: 50px;
+            height: 50px;
+
+        }
+
+		.noir
+        {
+            
+            background-color : black;
+            display: inline-block;
+        }
+        /* class pour la case blanche*/
+        .blanc
+        {
+            
+            background-color : white;
+            display: inline-block;
+        }
+        
+	</style>
+</head>
+<body>
+<header>Skiilou's company
+	<img src="images/5petit.jpg" width="145" height="145" alt="plan">
+</header><hr/>
+
+<style type="text/css">
+	
+	.noir{
+		background-color: red;
+	}
+
+	.blanc{
+		background-color: green;
+	}
+
+</style>
+
+		<h2>Création de damier</h2><hr>
+<!-- Affichage du damier de base 2x2
+<div class="noir"></div>
+<div class="blanc"></div><br>
+<div class="blanc"></div>
+<div class="noir"></div><br><hr>
+-->
+		<!-- 4 input à renseigner pour créer le damier -->
+		<label for="color1">Veuillez choisir la première couleur</label>
+        <input type="color" name="color1" id="color1"  value="#eeeeee"><br>
+        <label for="color2">Veuillez choisir la deuxième couleur</label>
+        <input type="color" name="color2" id="color2"  value="#111111"><br><hr>
+        <label for="But1">Cliquez sur le bouton pour afficher le damier</label>
+        <input type="button" id="generer" name="But1" onclick="changement_style()" value="Afficher" ></button><hr><br>
+        <label for="taille">Veuillez saisir la taille:</label>
+        <input type="number" name="taille" id="taille" placeholder="veuillez saisir la taille" min="4" step="4" value="4"><hr><br>
+
+
+<script type="text/javascript">
+	
+	function changement_style(){
+
+		document.location.reload();
+		//première couleur
+		let color1 = document.getElementById("color1").value;
+		//deuxième couleur
+   	    let color2 = document.getElementById("color2").value;
+		var string_changement= "<style >.noir{background-color: "+color1+";}.blanc{background-color: "+color2+";}</style>";
+		var afficherdiv="<style> div{border : 1px solid black;width: 50px;height: 50px;}</style>";
+		var div1 = "<div class='noir' style=' width: 50px; height: 50px; display : inline-block'></div>";
+        var div2 = "<div class='blanc' style=' width: 50px; height: 50px; display : inline-block'></div>";
+        var i = 0;
+    	var j = 0;
+		var couleurSelect = false;
+		var dim= Number(document.getElementById("taille").value);
+		
+        
+
+		document.write(string_changement);
+		document.write(string_changement+afficherdiv+"<br>"+div1+div2+"<br>"+div2+div1);
+		document.write("<br><input type='color' name='color1' id='color1'  value='#eeeeee'>");
+        document.write("<input type='color' name='color2' id='color2'  value='#111111'>");
+        document.write("<input type='button' id='generer' name='But1' onclick='changement_style()' value='Afficher' ></button><br>");
+        document.write("<input type='number' name='taille' id='taille' placeholder='veuillez saisir la taille' min='4' step='4'value='4'><br>");
+        for (i = 0 ; i < dim ; i++) {
+
+        	for (j = 0 ; j < dim ; j++) {
+		
+				if (couleurSelect == false) {
+				
+					document.write("<div style=' background-color:"+color1+";width: 50px; height: 50px; display : inline-block'></div>");
+					couleurSelect = true;
+				
+				}else{
+				
+					document.write("<div style=' background-color:"+color2+"; width: 50px; height: 50px; display : inline-block'></div>");
+					couleurSelect = false;
+				
+				}
+	        }
+			//inversion au saut de ligne
+			if (couleurSelect == false) {
+				couleurSelect = true;
+			}else{
+				couleurSelect = false;
+			}
+	        document.write("<br>");
+	    }
+
+
+	}
+
+
+
+</script>
+
+
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a><
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>
