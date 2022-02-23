@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--Ceci n'est pas une balise mais une directive
+indique la version de HTML utilisée:HTML5-->
+
+<!--Ceci est un commentaire-->
+
+<!--balises paires/impaires-->
+
+<html>
+<head><!--Entête de la page-->
+	<title></title>
+	<meta charset="utf-8">
+	<!--Encodage de la page (gestion des caractères accentués)-->
+	<link rel="stylesheet" type="text/css" href="">
+	<!--intégrer un fichier css externe-->
+	<link rel="shortcut icon" type="image/c-icon" href="">
+	<!--Afficher une image dans l'onglet de sa page-->
+	<style type="text/css"></style>
+</head>
+<body>
+<header>Skiilou's company
+	<img src="" width="145" height="145" alt="plan">
+</header><hr/>
+<main>
+
+	<script type="text/javascript">
+
+		function ouvrir1()
+		{
+			window.open('canva1.html','_blank')
+		}
+
+		function ouvrir2()
+		{
+			window.open('canva2.html','_blank')
+		}
+
+		function ouvrir3()
+		{
+			window.open('canva3.html','_blank')
+		}
+
+
+		var liste=document.createElement("ul");
+		document.body.appendChild(liste)
+		var elements1=document.createElement("li");
+		document.body.appendChild(elements1)
+		var img1=document.createElement("img");
+		img1.setAttribute("id","image1");
+		img1.setAttribute("src","images/reine.png")
+		img1.setAttribute("height","50")
+		img1.setAttribute("width","50")
+		img1.setAttribute("onclick","ouvrir1()")
+		elements1.appendChild(img1)
+
+		var elements2=document.createElement("li");
+		var img2=document.createElement("img");
+		img2.setAttribute("id","image2");
+		img2.setAttribute("src","images/roi.png")
+		img2.setAttribute("height","50")
+		img2.setAttribute("width","50")
+		img2.setAttribute("onclick","ouvrir2()")
+		document.body.appendChild(elements2)
+		elements2.appendChild(img2)
+
+		var elements3=document.createElement("li");
+		var img3=document.createElement("img");
+		img3.setAttribute("id","image2");
+		img3.setAttribute("src","images/valet.png")
+		img3.setAttribute("height","50")
+		img3.setAttribute("width","50")
+		img3.setAttribute("onclick","ouvrir3()")
+		document.body.appendChild(elements3)
+		elements3.appendChild(img3)
+
+
+	</script>
+
+
+
+
+</main>
+	
+<!--Corps de la page : contient les éléments affichés-->
+<footer><a href="http://copyright.be" target="_blank">Copyright © 2020 Sémantique_structurer - Tous droits réservés</a>
+<a href="loicbaron@hotmail.fr">mail</a>
+</footer>
+</body>
+</html>
