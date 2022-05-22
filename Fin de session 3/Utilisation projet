@@ -1,0 +1,2 @@
+Le dossier est constitué d'une page accueil qui a un lien vers le formulaire. Dans celui-ci il faut rentrer un nom d'utilisateur et un mot de passe qui sera écrit dans une page xml(test.xml). J'ai bien réussi à récupérer les valeurs du formulaire et à les écrire dans le formulaire mais à chaque utilisation du bouton submit les données du fichier XML sont remplacés. 
+Ensuite j'ai créé une page jeu.php dans laquelle il y a la possibilité d'ajouter des lignes et d'en supprimer. Le bouton modifier n'est malheureusement pas disponible par faute de temps.
